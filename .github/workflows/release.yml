@@ -10,6 +10,9 @@ name: Release
 # tag being released (.github/actions/test, addon and release), so they
 # change with the code they test and build.
 #
+# The release also pushes the container image, ghcr.io/loudomian/danio
+# (packages: write); its package is linked here.
+#
 # Run by hand: Actions → Release → Run workflow, with an existing tag. A
 # tag already published gets its files and notes replaced.
 #
@@ -74,6 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
     steps:
       - uses: actions/checkout@v4
         with:

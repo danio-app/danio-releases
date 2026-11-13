@@ -51,7 +51,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: Loudomian/danio
           ref: ${{ env.TAG }}
@@ -63,7 +63,7 @@ jobs:
     name: Blender add-on
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: Loudomian/danio
           ref: ${{ env.TAG }}
@@ -79,7 +79,7 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: Loudomian/danio
           ref: ${{ env.TAG }}

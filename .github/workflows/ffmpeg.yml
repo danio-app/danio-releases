@@ -46,7 +46,7 @@ jobs:
           - { target: windows-arm64, runner: ubuntu-24.04, apk: "" }
     runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Build on Alpine
         if: matrix.target != 'windows-arm64'
         run: |
@@ -61,7 +61,7 @@ jobs:
           echo "$LLVM_MINGW_SHA256  llvm-mingw.tar.xz" | sha256sum -c -
           tar xJf llvm-mingw.tar.xz
           PATH="$PWD/$name/bin:$PATH" sh ffmpeg/build.sh windows-arm64 out
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.target }}
           path: out/*.tar.gz
@@ -83,11 +83,11 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: ${{ matrix.target }}
           path: out
@@ -107,8 +107,8 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           path: out
           merge-multiple: true

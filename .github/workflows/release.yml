@@ -10,7 +10,7 @@ name: Release
 # tag being released (.github/actions/test, addon and release), so they
 # change with the code they test and build.
 #
-# The release also pushes the container image, ghcr.io/loudomian/danio
+# The release also pushes the container image, ghcr.io/danio-app/danio
 # (packages: write); its package is linked here.
 #
 # Run by hand: Actions → Release → Run workflow, with an existing tag. A

@@ -8,4 +8,4 @@ fragments and joins them. Only what danio uses is built in.
 FFmpeg built with x264 is licensed under the GNU General Public License,
 version 2 or later (COPYING.GPLv2). The sources and the build script are
 published with each build, in ffmpeg-<version>-source.tar.gz, at
-https://github.com/Loudomian/danio-releases/releases
+https://github.com/danio-app/danio-releases/releases

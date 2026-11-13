@@ -32,7 +32,7 @@ for (const name of readdirSync(dir).sort()) {
   const body = readFileSync(join(dir, name))
   assets[name] = {
     platform: m[1],
-    url: `https://github.com/Loudomian/danio-releases/releases/download/${tag}/${name}`,
+    url: `https://github.com/danio-app/danio-releases/releases/download/${tag}/${name}`,
     size: statSync(join(dir, name)).size,
     sha256: createHash('sha256').update(body).digest('hex'),
   }
@@ -49,7 +49,7 @@ const manifest = {
   kind: 'ffmpeg',
   version,
   published: new Date().toISOString(),
-  source: `https://github.com/Loudomian/danio-releases/releases/download/${tag}/ffmpeg-${version}-source.tar.gz`,
+  source: `https://github.com/danio-app/danio-releases/releases/download/${tag}/ffmpeg-${version}-source.tar.gz`,
   assets,
 }
 const body = Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`)
